@@ -18,7 +18,7 @@ class BitcoinPriceTracker {
     try {
       console.log("Fetching Bitcoin price...");
       const response = await retry(() => axios.get(this.apiUrl), {
-        maxAttempts: 3,
+        maxAttempts: 300,
         delay: 5000,
         shouldRetry: (error) =>
           error.code === "ECONNRESET" || error.code === "ETIMEDOUT",
