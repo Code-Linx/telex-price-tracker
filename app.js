@@ -36,6 +36,10 @@ app.post("/tick", async (req, res) => {
   }
 });
 
+app.get("/integration.json", (req, res) => {
+  res.json(settings);
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
